@@ -1,0 +1,13 @@
+.login-dark {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.dropdown-menu {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
+}
+

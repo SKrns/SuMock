@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SuMock - 수능모의고사</title>
+    <meta name="description" content="가장 빠르게 수능모의고사 찾기 ">
+    <meta property="og:type" content="">
+    <link rel="stylesheet" href="assets-detail/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets-detail/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets-detail/css/styles.css">
+</head>
+
+<body>
+
+    <div class="login-dark">
+
+        <form method="post">
+            <div class="illustration" style="padding-bottom: 0px;">
+                <a href="/" class="close"></a>
+                <div class="form-row">
+                    <div class="col col-4" display="inherit"><img src="assets-detail/img/시험지데머.png" style="width: 100%;"></div>
+                    <div class="col" style="padding-top: 10%;">
+                        <div class="form-row">
+                            <div class="col">
+                                <h2 class="text-left" style="margin-top: 0;margin-bottom: 0;font-size: 0.3em;"> <%= information[0] %> <%= information[1] %> <%= information[2] %> <%= information[3] %><br></h2>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <p class="text-right text-muted" style="font-size: 15px;"><%= rank[4] %>&nbsp;<%= rank[5] %><br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="table-responsive" style="padding-top: 36px;font-size: 14px;">
+                    <table class="table">
+                        <thead style="color: rgb(175,185,195);">
+                            <tr>
+                                <th>등급</th>
+                                <th>1등급</th>
+                                <th>2등급</th>
+                                <th>3등급</th>
+                                <th>4등급</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: rgb(235,245,255);">
+                            <tr>
+                                <td>점수</td>
+                                <td><%= rank[0] %></td>
+                                <td><%= rank[1] %></td>
+                                <td><%= rank[2] %></td>
+                                <td><%= rank[3] %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container" style="max-width: 986px;">
+                <div class="form-row">
+                    <div class="col offset-xl-0 text-center d-xl-flex justify-content-xl-center">
+                        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">문제지</button></div>
+                    </div>
+                    <div class="col text-center d-xl-flex justify-content-xl-center">
+                        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">정답지</button></div>
+                    </div>
+                    <div class="col text-center d-xl-flex justify-content-xl-center">
+                        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">해설지</button></div>
+                    </div>
+                </div>
+            </div>
+            <a data-toggle="modal" data-bs-tooltip="" data-placement="bottom" class="forgot" title="필요한 기능, 개선점, 버그 가 있으면 언제든지 알려주세요!" data-target="#send_modal">개선점을 알려주세요!</a></form>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="send_modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">피드백</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p>SuMock의 발전을 위한 의견 감사합니다.</p><textarea class="form-control" spellcheck="true"></textarea></div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">취소</button><button class="btn btn-primary" type="button">전송</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets-detail/js/jquery.min.js"></script>
+    <script src="assets-detail/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets-detail/js/bs-init.js"></script>
+    <script src="assets-detail/js/dropdown.js"></script>
+</body>
+
+</html>
