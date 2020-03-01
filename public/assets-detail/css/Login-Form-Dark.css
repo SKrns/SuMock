@@ -7,6 +7,10 @@ html{
   background-size: cover;
 }
 
+input{
+  width: 60px;
+}
+
 /*.login-dark {
   position: relative;
 }*/

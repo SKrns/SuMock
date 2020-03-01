@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SuMock - 수능모의고사</title>
+    <meta name="description" content="가장 빠르게 수능모의고사 찾기 ">
+    <meta property="og:type" content="">
+    <link rel="stylesheet" href="assets-detail/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets-detail/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets-detail/css/styles.css">
+</head>
+
+<body>
+
+    <div class="login-dark">
+        <form method="post" action="/admin/submit/<%= _id %>">
+            <div class="illustration" style="padding-bottom: 0px;">
+                <a href="/admin" class="close"></a>
+                <div class="form-row">
+                    <div class="col col-4" display="inherit"><img src="assets-detail/img/시험지데머.png" style="width: 100%;"></div>
+                    <div class="col" style="padding-top: 10%;">
+                        <div class="form-row">
+                            <div class="col">
+                                <h2 class="text-left" style="margin-top: 0;margin-bottom: 0;font-size: 0.3em;"> <%= grade %> <%= year %> <%= month %> <%= subject %><br></h2>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <p class="text-right text-muted" style="font-size: 15px;"><%=  %>&nbsp;<%=  %><br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="table-responsive" style="padding-top: 36px;font-size: 14px;">
+                    <table class="table">
+                        <thead style="color: rgb(175,185,195);">
+                            <tr>
+                                <th>등급</th>
+                                <th>1등급</th>
+                                <th>2등급</th>
+                                <th>3등급</th>
+                                <th>4등급</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: rgb(235,245,255);">
+                            <tr>
+                                <td>점수</td>
+                                <td><input type="text" name="rank0" value="<%= rank[0] %>"></input></td>
+                                <td><input type="text" name="rank1" value="<%= rank[1] %>"></input></td>
+                                <td><input type="text" name="rank2" value="<%= rank[2] %>"></input></td>
+                                <td><input type="text" name="rank3" value="<%= rank[3] %>"></input></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container" style="max-width: 986px;">
+                <div class="form-row">
+                    <div class="col offset-xl-0 text-center d-xl-flex justify-content-xl-center">
+                        <div class="form-group"><input type="url" name="testPaper" value="<%= testPaper %>"></input></div>
+                    </div>
+                    <div class="col text-center d-xl-flex justify-content-xl-center">
+                        <div class="form-group"><input type="url" name="testAnswer" value="<%= testAnswer %>"></input></div>
+                    </div>
+                    <div class="col text-center d-xl-flex justify-content-xl-center">
+                        <div class="form-group"><input type="url" name="testExplain" value="<%= testExplain %>"></input></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">갱신</button></div>
+        </form>
+    </div>
+
+    <script src="assets-detail/js/jquery.min.js"></script>
+    <script src="assets-detail/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets-detail/js/bs-init.js"></script>
+    <script src="assets-detail/js/dropdown.js"></script>
+</body>
+
+</html>

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets-detail/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets-detail/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets-detail/css/styles.css">
+    <link rel="shortcut icon" href="assets-detail/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets-detail/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -24,18 +26,19 @@
                     <div class="col" style="padding-top: 10%;">
                         <div class="form-row">
                             <div class="col">
-                                <h2 class="text-left" style="margin-top: 0;margin-bottom: 0;font-size: 0.3em;"> <%= information[0] %> <%= information[1] %> <%= information[2] %> <%= information[3] %><br></h2>
+                                <h2 class="text-left" style="margin-top: 0;margin-bottom: 0;font-size: 0.3em;"> <%= grade %> <%= year %> <%= month %> <%= subject %><br></h2>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <p class="text-right text-muted" style="font-size: 15px;"><%= rank[4] %>&nbsp;<%= rank[5] %><br></p>
+                                <p class="text-right text-muted" style="font-size: 15px;">수능, 모의고사는&nbsp;수목(SuMock)<br></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div>
+                <% if(rank[0]!=''){ %>
                 <div class="table-responsive" style="padding-top: 36px;font-size: 14px;">
                     <table class="table">
                         <thead style="color: rgb(175,185,195);">
@@ -58,18 +61,29 @@
                         </tbody>
                     </table>
                 </div>
+                <% } else { %>
+                <hr>
+                <h3 align="center" style="color: rgb(175,185,195);" >아직 업데이트되지 못했어요 ㅠㅠ</h3>
+                <hr>
+                <% } %>
             </div>
             <div class="container" style="max-width: 986px;">
                 <div class="form-row">
+                    <% if(testPaper!=''){ %>
                     <div class="col offset-xl-0 text-center d-xl-flex justify-content-xl-center">
-                        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">문제지</button></div>
+                        <div class="form-group"><button class="btn btn-primary btn-block" formaction="<%= testPaper %>" type="submit"> 문제지 </button></div>
                     </div>
+                    <% } %>
+                    <% if(testAnswer!=''){ %>
                     <div class="col text-center d-xl-flex justify-content-xl-center">
-                        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">정답지</button></div>
+                        <div class="form-group"><button class="btn btn-primary btn-block" formaction="<%= testAnswer %>" type="submit"> 정답지 </button></div>
                     </div>
+                    <% } %>
+                    <% if(testExplain!=''){ %>
                     <div class="col text-center d-xl-flex justify-content-xl-center">
-                        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">해설지</button></div>
+                        <div class="form-group"><button class="btn btn-primary btn-block" formaction="<%= testExplain %>" type="submit"> 해설지 </button></div>
                     </div>
+                    <% } %>
                 </div>
             </div>
             <a data-toggle="modal" data-bs-tooltip="" data-placement="bottom" class="forgot" title="필요한 기능, 개선점, 버그 가 있으면 언제든지 알려주세요!" data-target="#send_modal">개선점을 알려주세요!</a></form>
