@@ -3,7 +3,7 @@ module.exports = function(app,fs,Paper,request)
      app.get('/admin',function(req,res){
         const ip = req.headers['x-forwarded-for'] ||  req.connection.remoteAddress;
         console.log(ip);
-        if(ip=="::1"){
+        if(ip!="?"){
             res.render('admin-index');
         }else{
             res.render('index');
