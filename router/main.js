@@ -7,7 +7,7 @@ module.exports = function(app,fs,Paper)
      	// var fs = require('fs');
      	var get_arr = [req.query.grade,req.query.year,req.query.month,req.query.subject]
 
-
+        // res.redirect('/'+get_arr[0]+'/'+get_arr[1]+'/'+get_arr[2]+'/'+get_arr[3]);
 
         Paper.findOne({grade: get_arr[0], year: get_arr[1], month: get_arr[2], subject: get_arr[3]}, function(err, data){
             if(err) return res.status(500).json({error: err});
@@ -24,16 +24,39 @@ module.exports = function(app,fs,Paper)
 
                 data = paper;
             }
-            res.render("result",data)
-        })
-     });
-     app.get('/retrieve',function(req,res){
-        Paper.find(function(err, data){
-            if(err) return  res.status(500).send({error : "database failed"});
-            res.json(data);
+            res.render("result",data)      
         })
      });
 
+    app.get('/search', function(req, res){
+        if(req.query.grade && req.query.year && req.query.month &&req.query.subject){
+            var get_arr = [req.query.grade,req.query.year,req.query.month,req.query.subject]
+            res.redirect('/search/'+get_arr[0]+'/'+get_arr[1]+'/'+get_arr[2]+'/'+get_arr[3]);  
+        }else{
+            res.redirect('/'); 
+        }
+       
+    });
+
+    app.get('/search/:grade/:year/:month/:subject', function(req, res){
+        Paper.findOne({grade: req.params.grade, year: req.params.year, month: req.params.month, subject: req.params.subject}, function(err, data){
+            if(err) return res.status(500).json({error: err});
+            if(!data) {
+                var paper = new Paper();
+                paper.grade = get_arr[0];
+                paper.year = get_arr[1];
+                paper.month = get_arr[2];
+                paper.subject = get_arr[3];
+                paper.rank = ['','','',''];
+                paper.testPaper = '';
+                paper.testAnswer = '';
+                paper.testExplain = '';
+
+                data = paper;
+            }
+            res.render("result",data)
+        })
+    });
 
 
 

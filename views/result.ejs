@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>SuMock - 수능모의고사</title>
-    <meta name="description" content="가장 빠르게 수능모의고사 찾기 ">
+    <title><%= year %> <%= grade %> <%= month %> <%= subject %> 문제,답,해설,등급 - SuMock</title>
+    <meta name="description" content="<%= year %> <%= grade %> <%= month %> <%= subject %> 문제,답,해설,등급 - 가장 빠르게 수능, 모의고사 찾기 SuMock">
     <meta property="og:type" content="">
-    <link rel="stylesheet" href="assets-detail/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets-detail/css/Login-Form-Dark.css">
-    <link rel="stylesheet" href="assets-detail/css/styles.css">
-    <link rel="shortcut icon" href="assets-detail/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets-detail/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets-detail/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets-detail/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="/assets-detail/css/styles.css">
+    <link rel="shortcut icon" href="/assets-detail/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets-detail/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             <div class="illustration" style="padding-bottom: 0px;">
                 <a href="/" class="close"></a>
                 <div class="form-row">
-                    <div class="col col-4" display="inherit"><img src="assets-detail/img/시험지데머.png" style="width: 100%;"></div>
+                    <div class="col col-4" display="inherit"><img src="/assets-detail/img/test.png" style="width: 100%;"></div>
                     <div class="col" style="padding-top: 10%;">
                         <div class="form-row">
                             <div class="col">
@@ -86,7 +86,18 @@
                     <% } %>
                 </div>
             </div>
-            <a data-toggle="modal" data-bs-tooltip="" data-placement="bottom" class="forgot" title="필요한 기능, 개선점, 버그 가 있으면 언제든지 알려주세요!" data-target="#send_modal">개선점을 알려주세요!</a></form>
+            <!-- <a data-toggle="modal" data-bs-tooltip="" data-placement="bottom" class="forgot" title="필요한 기능, 개선점, 버그 가 있으면 언제든지 알려주세요!" data-target="#send_modal">개선점을 알려주세요!</a> -->
+            <a data-bs-tooltip="" data-placement="bottom" class="forgot" title="필요한 기능, 개선점, 버그 가 있으면 언제든지 알려주세요!" href="mailto:rnsk3626@gmail.com?subject=개선점을%20알려주세요!&body=필요한%20기능,%20개선점,%20버그가%20있으면%20언제든지%20알려주세요!" target="_top">개선점을 알려주세요!</a>
+            <hr>
+            <div >
+            <script src="https://ads-partners.coupang.com/g.js"></script>
+            <script>
+                new PartnersCoupang.G({ id:170162 });
+            </script>
+        </div>
+        </form>
+
+
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="send_modal">
         <div class="modal-dialog" role="document">

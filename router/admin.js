@@ -19,6 +19,7 @@ module.exports = function(app,fs,Paper,request)
         //     res.render(body);
         //     //callback
         // })
+        res.cookie('favorite', favorite);
 
         Paper.findOne({grade: get_arr[0], year: get_arr[1], month: get_arr[2], subject: get_arr[3]}, function(err, data){
             if(err) return res.status(500).json({error: err});
@@ -67,7 +68,7 @@ module.exports = function(app,fs,Paper,request)
 
         data.save(function(err){
             if(err) res.status(500).json({error: 'failed to update'});
-            res.json({message: 'data updated'});
+            res.send('<a href="/admin">update success. go back</a>');
             });
 
         });

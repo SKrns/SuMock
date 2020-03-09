@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var fs = require("fs")
 var mongoose = require('mongoose');
@@ -17,7 +18,7 @@ var server = app.listen(3000, function(){
 });
 
 app.use(express.static('public'));
-
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(session({
@@ -36,5 +37,7 @@ db.once('open', function(){
     console.log("Connected to mongod server");
 });
 
-mongoose.connect('mongodb+srv://soon3626:pil0104129@cluster0-a96tt.gcp.mongodb.net/sumock?retryWrites=true&w=majority');
+// mongoose.connect('mongodb+srv://soon3626:pil0104129@cluster0-a96tt.gcp.mongodb.net/sumock?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://soon3626:pil0104129@cluster0-a96tt.mongodb.net/sumock?retryWrites=true&w=majority');
+
 
