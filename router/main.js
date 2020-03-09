@@ -3,6 +3,21 @@ module.exports = function(app,fs,Paper)
      app.get('/',function(req,res){
         res.render('index')
      });
+     app.get('/sitemap.xml',function(req,res){
+        Paper.find(function(err, data){
+            if(err) return  res.status(500).send({error : "database failed"});
+            var s = data.size;
+            console.log("sitemap.xml checking");
+
+            var xml ='<?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>http://sumock.me/</loc></url>'
+            for(var i=0; i<Object.keys(data).length; i++){
+                xml+="<url><loc>http://sumock.me/search/"+data[i].grade+"/"+data[i].year+"/"+data[i].month+"/"+data[i].subject+"</loc></url>";
+            }
+            xml+='</urlset>'
+            res.header('Content-Type', 'text/xml');
+            res.send(xml);
+        })
+     });
      app.get('/result',function(req,res){
      	// var fs = require('fs');
      	var get_arr = [req.query.grade,req.query.year,req.query.month,req.query.subject]
@@ -43,10 +58,10 @@ module.exports = function(app,fs,Paper)
             if(err) return res.status(500).json({error: err});
             if(!data) {
                 var paper = new Paper();
-                paper.grade = get_arr[0];
-                paper.year = get_arr[1];
-                paper.month = get_arr[2];
-                paper.subject = get_arr[3];
+                paper.grade = req.params.grade;
+                paper.year = req.params.year;
+                paper.month = req.params.month;
+                paper.subject = req.params.subject;
                 paper.rank = ['','','',''];
                 paper.testPaper = '';
                 paper.testAnswer = '';

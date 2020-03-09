@@ -1,2 +1,3 @@
 User-agent: *
 Allow:/
+Sitemap: http://sumock.me/sitemap.xml
