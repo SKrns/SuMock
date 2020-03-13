@@ -11,3 +11,27 @@
   overflow-x: hidden;
 }
 
+h2{
+	margin-top: 0;margin-bottom: 0;font-size: 0.3em;
+}
+
+@media (max-width: 768px) { 
+	h2{
+		font-size: 0.25em;
+	}
+	table{
+		font-size: 12px;
+	}
+
+ }
+ @media (max-width: 330px) { 
+
+ 	h2{
+		font-size: 0.2em;
+	}
+	table{
+		font-size: 10px;
+	}
+ }
+
+

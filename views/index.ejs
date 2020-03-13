@@ -2,8 +2,18 @@
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160395973-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-160395973-1');
+    </script>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fix=cover">
     <title>SuMock 수목 - 빠른 수능모의고사 검색</title>
     <meta name="description" content="이젠 로그인과 헤맴없이 빠르고 간단하게 수능 모의고사의 시험지,정답지,해설,등급을 찾아보세요. ">
     <meta property="og:type" content="website">
@@ -28,44 +38,91 @@
                 <h2 style="margin-top: -22px;margin-bottom: 16px;">SuMock</h2>
             </div>
             <p class="text-center text-muted">이젠 빠르게 수능모의고사 시험지,답지를 출력하세요</p>
+            <hr>
             <div class="container">
                 <div class="form-row">
-                    <div class="col offset-xl-0 text-center d-xl-flex justify-content-xl-center">
-                        <div class="dropdown dropdown-grade"><button class="btn btn-primary dropdown-toggle btn-grade" data-toggle="dropdown" aria-expanded="false" type="button">고3</button>
+                    <div class="col col-grade offset-xl-0 d-xl-flex justify-content-xl-center">
+                        <div class="dropdown dropdown-grade"><button class="btn btn-outline-primary dropdown-toggle btn-grade" data-toggle="dropdown" aria-expanded="false" type="button">고3</button>
                             <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">고3</a></div>
                         </div>
                     </div>
-                    <div class="col text-center d-xl-flex justify-content-xl-center">
-                        <div class="dropdown dropdown-year"><button class="btn btn-primary dropdown-toggle btn-year" data-toggle="dropdown" aria-expanded="false" type="button">2019학년도</button>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">2020학년도</a><a class="dropdown-item" role="presentation" href="#">2019학년도</a><a class="dropdown-item" role="presentation" href="#">2018학년도</a><a class="dropdown-item" role="presentation" href="#">2017학년도</a><a class="dropdown-item" role="presentation"
-                                    href="#">2016학년도</a><a class="dropdown-item" role="presentation" href="#">2015학년도</a><a class="dropdown-item" role="presentation" href="#">2014학년도</a><a class="dropdown-item" role="presentation" href="#">2015학년도</a><a class="dropdown-item" role="presentation" href="#">2014학년도</a><a class="dropdown-item" role="presentation" href="#">2013학년도</a><a class="dropdown-item" role="presentation" href="#">2012학년도</a><a class="dropdown-item" role="presentation" href="#">2011학년도</a><a class="dropdown-item" role="presentation" href="#">2010학년도</a></div>
+                    <div class="col col-year d-xl-flex justify-content-xl-center">
+                        <div class="dropdown dropdown-year">
+                            <button class="btn btn-outline-primary dropdown-toggle btn-year" data-toggle="dropdown" aria-expanded="false" type="button">2019학년도</button>
+                            <div class="dropdown-menu" role="menu">
+                                <h6 class="dropdown-header">2019년</h6>
+                                <a class="dropdown-item" role="presentation" href="#">2020학년도</a>
+                                <h6 class="dropdown-header">2018년</h6>
+                                <a class="dropdown-item" role="presentation" href="#">2019학년도</a>
+                                <h6 class="dropdown-header">2017년</h6>
+                                <a class="dropdown-item" role="presentation" href="#">2018학년도</a>
+                                <h6 class="dropdown-header">2016년</h6>
+                                <a class="dropdown-item" role="presentation" href="#">2017학년도</a>
+                                <h6 class="dropdown-header">2015년</h6>
+                                <a class="dropdown-item" role="presentation" href="#">2016학년도</a>
+                                <h6 class="dropdown-header">2014년</h6>
+                                <a class="dropdown-item" role="presentation" href="#">2015학년도</a>
+                                <h6 class="dropdown-header">2013년</h6>
+                                <a class="dropdown-item" role="presentation" href="#">2014학년도</a>
+                                <a class="dropdown-item" role="presentation" href="#">2013학년도</a>
+                                <a class="dropdown-item" role="presentation" href="#">2012학년도</a>
+                                <a class="dropdown-item" role="presentation" href="#">2011학년도</a>
+                                <a class="dropdown-item" role="presentation" href="#">2010학년도</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col text-center d-xl-flex justify-content-xl-center">
-                        <div class="dropdown dropdown-month"><button class="btn btn-primary dropdown-toggle btn-month" data-toggle="dropdown" aria-expanded="false" type="button">6월</button>
-                            <div class="dropdown-menu dropdown-menu-right" role="menu"><a class="dropdown-item" role="presentation" href="#">3월</a><a class="dropdown-item" role="presentation" href="#">4월</a><a class="dropdown-item" role="presentation" href="#">6월</a><a class="dropdown-item" role="presentation"
-                                    href="#">7월</a><a class="dropdown-item" role="presentation" href="#">9월</a><a class="dropdown-item" role="presentation" href="#">10월</a><a class="dropdown-item" role="presentation" href="#">수능</a></div>
+                    <div class="col col-month d-xl-flex justify-content-xl-center">
+                        <div class="dropdown dropdown-month">
+                            <button class="btn btn-outline-primary dropdown-toggle btn-month" data-toggle="dropdown" aria-expanded="false" type="button">6월</button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <a class="dropdown-item" role="presentation" href="#">3월</a>
+                                <a class="dropdown-item" role="presentation" href="#">4월</a>
+                                <a class="dropdown-item" role="presentation" href="#">6월</a>
+                                <a class="dropdown-item" role="presentation" href="#">7월</a>
+                                <a class="dropdown-item" role="presentation" href="#">9월</a>
+                                <a class="dropdown-item" role="presentation" href="#">10월</a>
+                                <a class="dropdown-item" role="presentation" href="#">수능</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col text-center d-xl-flex justify-content-xl-center">
-                        <div class="dropdown dropdown-subject"><button class="btn btn-primary dropdown-toggle btn-subject" data-toggle="dropdown" aria-expanded="false" type="button">국어</button>
-                            <div class="dropdown-menu dropdown-menu-right" role="menu"><a class="dropdown-item" role="presentation" href="#">국어</a>
-                                <div class="dropdown-divider" role="presentation"></div><a class="dropdown-item" role="presentation" href="#">수학 가</a><a class="dropdown-item" role="presentation" href="#">수학 나</a>
-                                <div class="dropdown-divider" role="presentation"></div><a class="dropdown-item" role="presentation" href="#">영어</a>
-                                <div class="dropdown-divider" role="presentation"></div><a class="dropdown-item" role="presentation" href="#">한국사</a>
-                                <div class="dropdown-divider" role="presentation"></div><a class="dropdown-item" role="presentation" href="#">생활과 윤리</a><a class="dropdown-item" role="presentation" href="#">윤리와 사상</a><a class="dropdown-item" role="presentation" href="#">한국 지리</a><a class="dropdown-item"
-                                    role="presentation" href="#">세계 지리</a><a class="dropdown-item" role="presentation" href="#">동아시아사</a><a class="dropdown-item" role="presentation" href="#">세계사</a><a class="dropdown-item" role="presentation" href="#">법과 정치</a>
-                                <a
-                                    class="dropdown-item" role="presentation" href="#">경제</a><a class="dropdown-item" role="presentation" href="#">사회 문화</a>
-                                    <div class="dropdown-divider" role="presentation"></div><a class="dropdown-item" role="presentation" href="#">물리I<br></a><a class="dropdown-item" role="presentation" href="#">화학I</a><a class="dropdown-item" role="presentation" href="#">생명 과학I</a><a class="dropdown-item"
-                                        role="presentation" href="#">지구 과학I</a><a class="dropdown-item" role="presentation" href="#">물리II</a><a class="dropdown-item" role="presentation" href="#">화학II</a><a class="dropdown-item" role="presentation" href="#">생명 과학II</a>
-                                    <a
-                                        class="dropdown-item" role="presentation" href="#">지구 과학II</a>
+                     <div class="w-100 d-block d-md-none"></div>
+                    <div class="col col-subject d-xl-flex justify-content-xl-center">
+                        <div class="dropdown dropdown-subject">
+                            <button class="btn btn-outline-primary dropdown-toggle btn-subject" data-toggle="dropdown" aria-expanded="false" type="button">국어</button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <a class="dropdown-item" role="presentation" href="#">국어</a>
+                                <div class="dropdown-divider" role="presentation"></div>
+                                <a class="dropdown-item" role="presentation" href="#">수학 가</a>
+                                <a class="dropdown-item" role="presentation" href="#">수학 나</a>
+                                <div class="dropdown-divider" role="presentation"></div>
+                                <a class="dropdown-item" role="presentation" href="#">영어</a>
+                                <div class="dropdown-divider" role="presentation"></div>
+                                <a class="dropdown-item" role="presentation" href="#">한국사</a>
+                                <div class="dropdown-divider" role="presentation"></div>
+                                <a class="dropdown-item" role="presentation" href="#">생활과 윤리</a>
+                                <a class="dropdown-item" role="presentation" href="#">윤리와 사상</a>
+                                <a class="dropdown-item" role="presentation" href="#">한국 지리</a>
+                                <a class="dropdown-item" role="presentation" href="#">세계 지리</a>
+                                <a class="dropdown-item" role="presentation" href="#">동아시아사</a>
+                                <a class="dropdown-item" role="presentation" href="#">세계사</a>
+                                <a class="dropdown-item" role="presentation" href="#">법과 정치</a>
+                                <a class="dropdown-item" role="presentation" href="#">경제</a>
+                                <a class="dropdown-item" role="presentation" href="#">사회 문화</a>
+                                <div class="dropdown-divider" role="presentation"></div>
+                                <a class="dropdown-item" role="presentation" href="#">물리I<br></a>
+                                <a class="dropdown-item" role="presentation" href="#">화학I</a>
+                                <a class="dropdown-item" role="presentation" href="#">생명 과학I</a>
+                                <a class="dropdown-item" role="presentation" href="#">지구 과학I</a>
+                                <a class="dropdown-item" role="presentation" href="#">물리II</a>
+                                <a class="dropdown-item" role="presentation" href="#">화학II</a>
+                                <a class="dropdown-item" role="presentation" href="#">생명 과학II</a>
+                                <a class="dropdown-item" role="presentation" href="#">지구 과학II</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <hr>
             <input type="hidden" class="get-grade" name="grade" value="고3">
             <input type="hidden" class="get-year" name="year" value="2019학년도">
             <input type="hidden" class="get-month" name="month" value="6월">
@@ -74,7 +131,7 @@
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">GO</button></div>
 
             <!-- <a data-toggle="modal" data-bs-tooltip="" data-placement="bottom" class="forgot" title="필요한 기능, 개선점, 버그 가 있으면 언제든지 알려주세요!" data-target="#send_modal">개선점을 알려주세요!</a> -->
-            <a data-bs-tooltip="" data-placement="bottom" class="forgot" title="필요한 기능, 개선점, 버그 가 있으면 언제든지 알려주세요!" href="mailto:rnsk3626@gmail.com?subject=개선점을%20알려주세요!&body=필요한%20기능,%20개선점,%20버그가%20있으면%20언제든지%20알려주세요!" target="_top">개선점을 알려주세요!</a>
+            <a data-bs-tooltip="" data-placement="bottom" class="forgot" title="필요한 기능, 개선점, 버그 가 있으면 언제든지 알려주세요!" href="mailto:contact@sumock.me?subject=개선점을%20알려주세요!&body=필요한%20기능,%20개선점,%20버그가%20있으면%20언제든지%20알려주세요!" target="_top">개선점을 알려주세요!</a>
         </form>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="send_modal">

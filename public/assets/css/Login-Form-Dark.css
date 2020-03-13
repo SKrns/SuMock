@@ -13,6 +13,10 @@ html{
   /*position: absolute;*/
 }
 
+.container{
+  /*border: 1px solid black*/
+}
+
 .login-dark form {
   max-width: 535px;
   width: 90%;
@@ -50,15 +54,26 @@ html{
   color: inherit;
 }
 
+
 .login-dark form .btn-primary {
   background: #214a80;
   border: none;
   border-radius: 4px;
   padding: 11px;
   box-shadow: none;
-  margin-top: 26px;
+  margin-top: 11px;
   text-shadow: none;
   outline: none;
+}
+.btn-outline-primary {
+  /*background: #214a80;*/
+  /*border: none;*/
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 11px;
+  text-shadow: none;
+  /*outline: none;*/
 }
 
 .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {

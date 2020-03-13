@@ -1,0 +1,38 @@
+.container{
+		/*width: 90%;*/
+	}
+.col-grade, .col-year, .col-month, .col-subject{
+	text-align: center;
+}
+@media (max-width: 768px) { 
+	.container{
+		width: 97%;
+	}
+	.login-dark form {
+		width: 95%;
+		padding: 40px 30px 40px 30px;
+	}
+	.btn-subject {
+		width: 100%;
+	}
+	.col-grade{
+		text-align: left;
+	}
+	.col-month{
+		text-align: right;
+	}
+
+ }
+ @media (max-width: 330px) { 
+	.container{
+		width: 100%;
+	}
+	.login-dark form {
+		width: 97%;
+		padding: 30px 10px 30px 10px;
+	}
+	.btn-subject {
+		width: 95%;
+	}
+
+ }
