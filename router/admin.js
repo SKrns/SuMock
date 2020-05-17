@@ -14,11 +14,6 @@ module.exports = function(app,fs,Paper,request)
      app.get('/admin-result',function(req,res){
         var get_arr = [req.query.grade,req.query.year,req.query.month,req.query.subject]
 
-     	//GET : /api/papers/:grade/:year/:month/:subject
-        // request.get({uri:"http://0.0.0.0:3001/api/papers"}, function (error, response, body) {
-        //     res.render(body);
-        //     //callback
-        // })
         res.cookie('favorite', favorite);
 
         Paper.findOne({grade: get_arr[0], year: get_arr[1], month: get_arr[2], subject: get_arr[3]}, function(err, data){

@@ -5,7 +5,7 @@ module.exports = function(app,fs,Paper)
      });
      app.get('/sitemap.xml',function(req,res){
         Paper.find(function(err, data){
-            if(err) return  res.status(500).send({error : "database failed"});
+            if(err) return  res.status(500).send({error : "Database failed"});
             var s = data.size;
             console.log("sitemap.xml checking");
 
@@ -75,7 +75,7 @@ module.exports = function(app,fs,Paper)
 
 
 
-    // CREATE BOOK
+    // CREATE PAPER
     app.post('/api/papers', function(req, res){
         var paper = new Paper();
         paper.grade = req.body.grade;
@@ -99,7 +99,7 @@ module.exports = function(app,fs,Paper)
         });
     });
 
-    // GET ALL papers
+    // GET ALL PAPERS
     app.get('/api/papers', function(req,res){
         Paper.find(function(err, data){
             if(err) return  res.status(500).send({error : "database failed"});
@@ -107,7 +107,7 @@ module.exports = function(app,fs,Paper)
         })
     });
 
-    // GET SINGLE BOOK 학년/년도/월/과목
+    // GET SINGLE PAPER 학년/년도/월/과목
     app.get('/api/papers/:grade/:year/:month/:subject', function(req, res){
         Paper.findOne({grade: req.params.grade, year: req.params.year, month: req.params.month, subject: req.params.subject}, function(err, data){
             if(err) return res.status(500).json({error: err});
@@ -117,7 +117,7 @@ module.exports = function(app,fs,Paper)
     });
 
 
-    // UPDATE THE BOOK
+    // UPDATE PAPER
     app.put('/api/papers/:grade/:year/:month/:subject', function(req, res){
         Paper.update({grade: req.params.grade, year: req.params.year, month: req.params.month, subject: req.params.subject}, { $set: req.body }, function(err, output){
             if(err) res.status(500).json({ error: 'database failure' });
@@ -127,7 +127,7 @@ module.exports = function(app,fs,Paper)
         })
     });
 
-    // DELETE BOOK
+    // DELETE PAPER
     app.delete('/api/papers/:book_id', function(req, res){
         res.end();
     });

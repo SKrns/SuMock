@@ -1,20 +1,23 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var fs = require("fs")
-var mongoose = require('mongoose');
-var request = require('request');
-var Paper = require('./models/paper');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const fs = require("fs")
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const request = require('request');
+const Paper = require('./models/paper');
+
+dotenv.config();
+
+let app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-
-var server = app.listen(3000, function(){
- console.log("Express server has started on port 3000")
+let server = app.listen(process.env.PORT, () => {
+ console.log("Express server has started on port %d", process.env.PORT);
 });
 
 app.use(express.static('public'));
@@ -28,16 +31,16 @@ app.use(session({
 }));
 
 
-var router = require('./router/main')(app, fs, Paper);
-var router2 = require('./router/admin')(app, fs, Paper, request);
+let main_router = require('./router/main')(app, fs, Paper);
+let admin_router = require('./router/admin')(app, fs, Paper, request);
+let error_router = require('./router/error')(app);
 
-var db = mongoose.connection;
+let db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', function(){
     console.log("Connected to mongod server");
 });
 
-// mongoose.connect('mongodb+srv://soon3626:pil0104129@cluster0-a96tt.gcp.mongodb.net/sumock?retryWrites=true&w=majority');
-mongoose.connect('mongodb+srv://soon3626:pil0104129@cluster0-a96tt.mongodb.net/sumock?retryWrites=true&w=majority');
+mongoose.connect(process.env.MONGO_URL);
 
 
